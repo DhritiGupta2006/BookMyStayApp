@@ -167,3 +167,16 @@ To confirm booking requests by assigning rooms safely while ensuring inventory c
 4. **Uniqueness Enforcement:** The system checks a **Set** of allocated IDs to prevent reuse/double-booking.
 5. **Synchronization:** The inventory count is decremented and the reservation is confirmed simultaneously.
 
+---
+
+## Use Case 7: Add-On Service Selection
+
+### 🎯 Objective
+To extend the booking model to support optional services. This demonstrates **Business Extensibility** by allowing guests to add features like WiFi or Breakfast to an existing reservation without modifying the core booking or allocation logic.
+
+### 🔄 Application Flow
+1. **Selection:** The Guest selects one or more optional add-on services.
+2. **Mapping:** Selected services are stored in a `List` and mapped to a specific Reservation ID using a `Map`.
+3. **Cost Calculation:** The system aggregates the base room price with the total cost of all selected services.
+4. **Isolation:** Core booking data and room inventory counts remain strictly unchanged.
+
