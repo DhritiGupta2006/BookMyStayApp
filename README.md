@@ -110,3 +110,22 @@ To implement a room search feature using data structures that allows users to vi
 
 ## 📌 Author
 This project is developed as a learning exercise to understand real-world system design using Java.
+
+---
+
+## Use Case 3: Centralized Room Inventory Management
+
+### 🎯 Objective
+To introduce centralized inventory management by replacing scattered availability variables with a single, consistent **HashMap** data structure. This demonstrates how to solve real-world state management problems through encapsulation.
+
+### 🔄 Application Flow
+1. **Initialization:** The system initializes the `RoomInventory` component.
+2. **Registration:** Room types (Single, Double, Suite) are registered with their initial available counts.
+3. **Centralized Storage:** Availability is stored and retrieved from a `HashMap<String, Integer>`.
+4. **Controlled Updates:** Updates to availability are performed through dedicated methods, ensuring data integrity.
+5. **Display:** The current state of the entire inventory is printed to the console.
+
+### 🛠 Running Procedure
+**Step 1: Compile the program**
+```bash
+javac UseCase3InventorySetup.java
