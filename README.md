@@ -180,3 +180,17 @@ To extend the booking model to support optional services. This demonstrates **Bu
 3. **Cost Calculation:** The system aggregates the base room price with the total cost of all selected services.
 4. **Isolation:** Core booking data and room inventory counts remain strictly unchanged.
 
+---
+
+## Use Case 8: Booking History & Reporting
+
+### 🎯 Objective
+To introduce historical tracking of confirmed bookings. By utilizing a **List** data structure, the system maintains a chronological audit trail of all transactions, providing operational visibility and supporting administrative reporting without the need for external databases.
+
+### 🔄 Application Flow
+1. **Confirmation:** A booking is finalized and confirmed in the system.
+2. **Archiving:** The confirmed reservation details are added to the `Booking History` list.
+3. **Chronological Storage:** Records are maintained in the exact order they were confirmed (Insertion Order).
+4. **Request:** An Admin triggers the `Report Service` to view system usage.
+5. **Reporting:** The system retrieves stored records and generates a summary report.
+
