@@ -27,3 +27,4 @@ public class UseCase1HotelBookingApp {
         System.out.println("\nSystem started successfully. Exiting entry point.");
     }
 }
+
