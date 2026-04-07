@@ -139,3 +139,17 @@ To enable guests to view available rooms and their details without modifying the
 4. **Display:** Room details (price, capacity) are shown for available rooms; unavailable rooms are marked as "Sold Out".
 5. **Stability:** No inventory variables are modified during the search process.
 
+---
+
+## Use Case 5: Booking Request (First-Come-First-Served)
+
+### 🎯 Objective
+To handle multiple booking requests fairly by introducing a request intake mechanism. By using a **Queue**, the system ensures that guest requests are stored and eventually processed in the exact order they arrived (**FIFO**).
+
+### 🔄 Application Flow
+1. **Submission:** A Guest submits a booking request (Reservation object).
+2. **Enqueuing:** The request is added to the `BookingRequestQueue`.
+3. **Ordering:** Requests are stored in arrival order automatically by the Queue data structure.
+4. **Waiting:** Requests remain in the queue, decoupled from the allocation logic.
+5. **State Preservation:** No inventory mutation or room assignment occurs at this stage.
+
