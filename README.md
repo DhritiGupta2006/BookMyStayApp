@@ -125,7 +125,17 @@ To introduce centralized inventory management by replacing scattered availabilit
 4. **Controlled Updates:** Updates to availability are performed through dedicated methods, ensuring data integrity.
 5. **Display:** The current state of the entire inventory is printed to the console.
 
-### 🛠 Running Procedure
-**Step 1: Compile the program**
-```bash
-javac UseCase3InventorySetup.java
+---
+
+## Use Case 4: Room Search & Availability Check
+
+### 🎯 Objective
+To enable guests to view available rooms and their details without modifying the system state. This use case reinforces **Read-Only Access** and ensures a clear separation between searching for data and modifying inventory.
+
+### 🔄 Application Flow
+1. **Request:** The Guest initiates a search for available rooms.
+2. **Retrieval:** The system fetches counts from the `RoomInventory` and descriptions from `Room` domain objects.
+3. **Filtering:** Validation logic ensures that only room types with availability > 0 are presented as bookable.
+4. **Display:** Room details (price, capacity) are shown for available rooms; unavailable rooms are marked as "Sold Out".
+5. **Stability:** No inventory variables are modified during the search process.
+
