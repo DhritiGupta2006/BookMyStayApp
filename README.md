@@ -153,3 +153,17 @@ To handle multiple booking requests fairly by introducing a request intake mecha
 4. **Waiting:** Requests remain in the queue, decoupled from the allocation logic.
 5. **State Preservation:** No inventory mutation or room assignment occurs at this stage.
 
+---
+
+## Use Case 6: Reservation Confirmation & Room Allocation
+
+### 🎯 Objective
+To confirm booking requests by assigning rooms safely while ensuring inventory consistency and preventing double-booking. This is achieved by introducing the **Set** data structure to enforce uniqueness.
+
+### 🔄 Application Flow
+1. **Dequeue:** A booking request is retrieved from the FIFO queue.
+2. **Availability Check:** The system verifies the `RoomInventory` for the requested type.
+3. **ID Generation:** A unique Room ID is generated (e.g., S-101).
+4. **Uniqueness Enforcement:** The system checks a **Set** of allocated IDs to prevent reuse/double-booking.
+5. **Synchronization:** The inventory count is decremented and the reservation is confirmed simultaneously.
+
