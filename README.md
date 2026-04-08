@@ -208,3 +208,17 @@ To strengthen system reliability by introducing structured validation and error 
 4. **Communication:** The system catches the exception and displays a meaningful error message.
 5. **Stability:** The application prevents invalid state changes and continues running for subsequent requests.
 
+---
+
+## Use Case 10: Booking Cancellation & Inventory Rollback
+
+### 🎯 Objective
+To enable the safe cancellation of confirmed bookings by correctly reversing system state changes. This ensures **Inventory Consistency** and predictable recovery behavior by using a **Stack** data structure to model the rollback of allocated resources.
+
+### 🔄 Application Flow
+1. **Request:** A Guest initiates a cancellation for an existing booking.
+2. **Validation:** The system verifies the reservation exists and is in a cancellable state.
+3. **Rollback:** The allocated room ID is pushed to a rollback structure (Stack).
+4. **Restoration:** The inventory count for the specific room type is incremented immediately.
+5. **Update:** Booking records are updated to reflect the cancellation, restoring system state consistently.
+
