@@ -9,3 +9,15 @@
 * [32mUC9-ErrorHandling[m
   dev[m
   main[m
+  UC1[m
+* [32mUC10-CancellationRollback[m
+  UC2-RoomInitialization[m
+  UC3-InventorySetup[m
+  UC4-RoomSearch[m
+  UC5-BookingQueue[m
+  UC6-RoomAllocation[m
+  UC7-AddOnServices[m
+  UC8-BookingHistory[m
+  UC9-ErrorHandling[m
+  dev[m
+  main[m
