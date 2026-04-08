@@ -194,3 +194,17 @@ To introduce historical tracking of confirmed bookings. By utilizing a **List** 
 4. **Request:** An Admin triggers the `Report Service` to view system usage.
 5. **Reporting:** The system retrieves stored records and generates a summary report.
 
+---
+
+## Use Case 9: Error Handling & Validation
+
+### 🎯 Objective
+To strengthen system reliability by introducing structured validation and error handling. This ensures that invalid inputs (such as incorrect casing or non-existent room types) and inconsistent states (like negative inventory) are detected early using a **Fail-Fast** approach.
+
+### 🔄 Application Flow
+1. **Input:** A Guest provides booking details.
+2. **Validation:** The `Invalid Booking Validator` checks input values against system constraints.
+3. **Exception Handling:** If validation fails, a `BookingException` is thrown immediately.
+4. **Communication:** The system catches the exception and displays a meaningful error message.
+5. **Stability:** The application prevents invalid state changes and continues running for subsequent requests.
+
