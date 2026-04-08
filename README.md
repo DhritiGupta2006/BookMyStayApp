@@ -235,3 +235,19 @@ To demonstrate how concurrent access to shared resources can lead to an inconsis
 3. **Critical Section:** The system uses `synchronized` blocks to ensure only one thread performs an allocation at a time.
 4. **Validation:** Each thread re-verifies availability inside the critical section.
 5. **Consistency:** The system completes the simulation, ensuring that room counts never drop below zero and no double-booking occurs.
+
+---
+
+## Use Case 12: Data Persistence & System Recovery
+
+### 🎯 Objective
+To transition from in-memory thinking to durable system design. This use case introduces **Persistence** and **Recovery** concepts, ensuring that critical system state (like room inventory) survives application restarts or crashes by being stored in a physical file.
+
+### 🔄 Application Flow
+1. **Shutdown Preparation:** The system prepares to exit.
+2. **Serialization:** Current inventory and booking states are converted into a format suitable for storage.
+3. **Writing:** Serialized data is written to a persistent file (`inventory_state.txt`).
+4. **Restart:** The application is launched again.
+5. **Deserialization/Recovery:** The system reads the file and reconstructs the objects back into memory.
+6. **Resumption:** The system continues with the recovered state exactly where it left off.
+
