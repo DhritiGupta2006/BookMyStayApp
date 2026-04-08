@@ -222,3 +222,16 @@ To enable the safe cancellation of confirmed bookings by correctly reversing sys
 4. **Restoration:** The inventory count for the specific room type is incremented immediately.
 5. **Update:** Booking records are updated to reflect the cancellation, restoring system state consistently.
 
+---
+
+## Use Case 11: Concurrent Booking Simulation (Thread Safety)
+
+### 🎯 Objective
+To demonstrate how concurrent access to shared resources can lead to an inconsistent system state and show how **Synchronization** ensures correctness under multi-user conditions. This use case addresses **Race Conditions** where multiple users attempt to book the last available room at the same time.
+
+### 🔄 Application Flow
+1. **Concurrency:** Multiple Guest threads submit booking requests simultaneously.
+2. **Access Control:** Threads attempt to access the shared inventory count.
+3. **Critical Section:** The system uses `synchronized` blocks to ensure only one thread performs an allocation at a time.
+4. **Validation:** Each thread re-verifies availability inside the critical section.
+5. **Consistency:** The system completes the simulation, ensuring that room counts never drop below zero and no double-booking occurs.
